@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVibe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="logo/l1.png" alt="EduVibe Logo">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flashcard.html">Flashcard</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#" class="btn-login">Log In</a></li>
+            <li><a href="#" class="btn-signup">Sign Up</a></li>
+        </ul>
+    </nav>
+
+<!-- body heading-->
+    <h2 class="topic-container-heading">Please choose the topic below</h2>
+    
+<!-- topic selection button -->  
+    <div class="topics-container">
+        <button class="topic-button" id="html-topic">HTML</button>
+        <button class="topic-button" id="css-topic">CSS</button>
+        <button class="topic-button" id="js-topic">JavaScript</button>
+    </div>
+    
+<!-- flash card where it will show after clicking on one of the above button -->  
+    <div class="flashcard-container" style="display: none;">
+        <div class="flashcard">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back"></div>
+            </div>
+        </div>
+        <div class="hint-container" data-hint="This is a hint!">Here is a hint</div>        
+    </div>
+
+    <!-- creating flash card form-->
+    <h3 id="create-topic">Create flash card</h3>
+    <div id="flashcard-form-container" style="display: none;">
+        <h3>Create a New Flashcard</h3>
+        <label for="flashcard-topic">Select Topic:</label>
+        <select id="flashcard-topic">
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+        </select>
+        <label for="flashcard-front">Question:</label>
+        <input type="text" id="flashcard-front" required>
+        <label for="flashcard-back">Answer:</label>
+        <input type="text" id="flashcard-back" required>
+        <label for="flashcard-hint">Hint:</label>
+        <input type="text" id="flashcard-hint" required>
+        <button id="add-flashcard">Add Flashcard</button>
+    </div>
+
+<!-- Buttons for navigation of the flash card -->
+    <div class="flashcard-buttons-container">
+        <button id="next-button" class="flashcard-button" style="display: none;">Next</button>
+        <button id="back-button" class="flashcard-button" style="display: none;">Back</button>
+        <button id="return-button" class="flashcard-button" style="display: none;">Return to Topics</button>
+    </div>
+
+    <!-- Login Model -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Log In</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Log In</button>
+            </form>
+            <p class="modal-footer">Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Model -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-signup">Email</label>
+                    <input type="email" id="email-signup" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-signup">Password</label>
+                    <input type="password" id="password-signup" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+            <p class="modal-footer">Already have an account? <a href="#" id="switch-to-login">Log In</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">EduVibe</div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <p>© 2025 EduVibe. All rights reserved.</p>
+    </footer>
+
+    <script src="js/flashcard.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
